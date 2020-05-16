@@ -11,12 +11,18 @@ const imageController = (num) => {
     newImage.id = 'image';
     slider.appendChild(newImage);
     newImage.style.opacity = '1';
+    for (let k = 0; k < circles.length; k++) {
+        circles[k].style.backgroundColor = "white";
+    }
+    circles[imageNum - 1].style.backgroundColor = 'grey';
 }
 
 const timedSwitch = setInterval(function(){
     imageNum +=1;
     if (imageNum == 5) {imageNum = 1;}
     imageController(imageNum);
+    
+
 }, 5000);
 
 for (let i = 0; i < arrows.length; i++) {
