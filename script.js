@@ -2,6 +2,12 @@ const arrows = document.querySelectorAll('.arrow');
 const circles = document.querySelectorAll('.circle');
 const slider = document.querySelector('#slider');
 
+for (let i = 0; i < circles.length; i++) {
+    circles[i].addEventListener('click', (event)=> {
+        imageController(i + 1);
+    })
+}
+
 let imageNum = 1;
 
 const imageController = (num) => {
@@ -14,7 +20,7 @@ const imageController = (num) => {
     for (let k = 0; k < circles.length; k++) {
         circles[k].style.backgroundColor = "white";
     }
-    circles[imageNum - 1].style.backgroundColor = 'grey';
+    circles[num - 1].style.backgroundColor = 'grey';
 }
 
 const timedSwitch = setInterval(function(){
@@ -42,12 +48,3 @@ for (let i = 0; i < arrows.length; i++) {
     })
 }
 
-for (let i = 0; i < circles.length; i++) {
-    circles[i].addEventListener('click', (event)=> {
-        for (let j = 0; j < circles.length; j++) {
-            circles[j].style.backgroundColor = "white";
-        }
-        event.target.style.backgroundColor = 'grey';
-        imageController(i + 1);
-    })
-}

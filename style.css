@@ -38,6 +38,10 @@
     height: 350px;
 }
 
+#one {
+    background-color: grey;
+}
+
 #slider img {
     width: 100%;
     max-width: 100%;
