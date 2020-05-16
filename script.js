@@ -14,7 +14,6 @@ const imageController = (num) => {
 }
 
 const timedSwitch = setInterval(function(){
-    console.log('triggered'); 
     imageNum +=1;
     if (imageNum == 5) {imageNum = 1;}
     imageController(imageNum);
@@ -43,7 +42,6 @@ for (let i = 0; i < circles.length; i++) {
             circles[j].style.backgroundColor = "white";
         }
         event.target.style.backgroundColor = 'grey';
-        console.log(i+1);
         imageController(i + 1);
     })
 }
